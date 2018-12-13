@@ -1,4 +1,4 @@
-package altkom.groupwork.traveloffice.travelofficespring;
+package altkom.groupwork.traveloffice.travelofficespring.model;
 
 public class AbroadTrip extends Trip {
     private double insurance;

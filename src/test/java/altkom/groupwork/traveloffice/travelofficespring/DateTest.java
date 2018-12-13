@@ -1,5 +1,6 @@
 package altkom.groupwork.traveloffice.travelofficespring;
 
+import altkom.groupwork.traveloffice.travelofficespring.model.Date;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

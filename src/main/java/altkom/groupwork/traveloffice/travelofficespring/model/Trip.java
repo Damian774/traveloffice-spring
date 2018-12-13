@@ -1,4 +1,4 @@
-package altkom.groupwork.traveloffice.travelofficespring;
+package altkom.groupwork.traveloffice.travelofficespring.model;
 
 public abstract class Trip {
     private Date start;

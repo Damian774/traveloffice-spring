@@ -1,8 +1,10 @@
 package altkom.groupwork.traveloffice.travelofficespring.service.impl;
 
-import altkom.groupwork.traveloffice.travelofficespring.Customer;
-import altkom.groupwork.traveloffice.travelofficespring.Trip;
+import altkom.groupwork.traveloffice.travelofficespring.model.Customer;
+import altkom.groupwork.traveloffice.travelofficespring.model.Trip;
+import altkom.groupwork.traveloffice.travelofficespring.repository.FakeDatabase;
 import altkom.groupwork.traveloffice.travelofficespring.service.TravelOfficeService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
@@ -12,9 +14,11 @@ public class TravelOfficeServiceImpl implements TravelOfficeService {
 
     private Set<Customer> customerSet;
     private Map<String, Trip> tripMap;
+    private FakeDatabase fakeDatabase;
 
     @Override
     public String toString() {
+        if(customerSet==null) return "";
         StringBuilder info = new StringBuilder("Total clients [" + getCustomerCount() + "]\n\tClient list: ");
         int count = 1;
         for (Customer customer : customerSet) {
@@ -25,11 +29,13 @@ public class TravelOfficeServiceImpl implements TravelOfficeService {
         return info.toString();
     }
 
-
+    @Autowired
     public TravelOfficeServiceImpl() {
-        customerSet = new HashSet<>();
-        tripMap = new HashMap<>();
+        this.fakeDatabase = new FakeDatabase();
+        this.customerSet = fakeDatabase.getCustomers();
+        this.tripMap = fakeDatabase.getTrips();
     }
+
 
     @Override
     public void addCustomer(Customer customer) {
@@ -92,7 +98,7 @@ public class TravelOfficeServiceImpl implements TravelOfficeService {
 
     @Override
     public String showAllCustomers() {
-        StringBuilder info = new StringBuilder("Total clients [" + getCustomerCount() + "]\n\tClient list: ");
+        StringBuilder info = new StringBuilder("Total clients \n\n\n\n\n\n\n\n[" + getCustomerCount() + "]\n\tClient list: ");
         int count = 1;
         for (Customer customer : customerSet) {
             info.append("\n\nClient number [").append(count).append("]\n\n").append(customer.getCredentials());

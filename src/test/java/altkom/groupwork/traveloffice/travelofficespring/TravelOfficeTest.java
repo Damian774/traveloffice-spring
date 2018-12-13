@@ -1,5 +1,6 @@
 package altkom.groupwork.traveloffice.travelofficespring;
 
+import altkom.groupwork.traveloffice.travelofficespring.model.*;
 import altkom.groupwork.traveloffice.travelofficespring.service.TravelOfficeService;
 import altkom.groupwork.traveloffice.travelofficespring.service.impl.TravelOfficeServiceImpl;
 import org.junit.Before;

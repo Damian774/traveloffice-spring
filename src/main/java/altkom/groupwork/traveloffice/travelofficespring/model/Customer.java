@@ -1,4 +1,4 @@
-package altkom.groupwork.traveloffice.travelofficespring;
+package altkom.groupwork.traveloffice.travelofficespring.model;
 
 public class Customer {
     private String name;
@@ -7,7 +7,7 @@ public class Customer {
 
     @Override
     public String toString() {
-        return "Client name: "+name+"\nClient altkom.groupwork.traveloffice.travelofficespring.Address: "+address.toString()+"\naltkom.groupwork.traveloffice.travelofficespring.Trip: "+trip.toString();
+        return "Client name: "+name+"\nAddress: "+address.toString()+"\nTrip: "+trip.toString();
     }
 
     public String getName() {
@@ -28,7 +28,7 @@ public class Customer {
 
 
     public String getCredentials() {
-        return "Client name: "+name+"\nClient altkom.groupwork.traveloffice.travelofficespring.Address: "+address.toString()+"\n";
+        return "Client name: "+name+"\nAddress: "+address.toString()+"\n";
 
     }
 }
